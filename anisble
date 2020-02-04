@@ -1,0 +1,56 @@
+ANSIBLE:
+
+1. Configuration management (CM) refers to the process of systematically handling changes to a system in a way that it maintains integrity over time
+
+2. CM helps to implement
+Policies
+Procedures
+Techniques
+Tools
+
+3. Why Configuration Management ?
+ 	Increase Uptime
+	Improve Performance
+	Ensure Compliance
+	Prevent Errors
+	Reduces Cost
+
+4. Ansible is an automation engine that automates software provisioning, configuration management, and application deployment
+
+5. It turns your infrastructure as code i.e  your computing environment has some of the same attributes as your application:
+	Your infrastructure is versionable. 
+	Your infrastructure is repeatable. 
+	Your infrastructure is testable. 
+
+6. You only need to tell what the desired configuration should be, not how to achieve it
+
+7. Pros of Ansible :
+Agentless
+Relies on ssh
+Uses python
+Push mechanism
+
+8. Default Ansible configuration files,
+
+• /etc/ansible — The main configuration folder which encompasses all Ansible config
+• /etc/ansible/hosts — This file holds information for the hosts/and host groups you will configure
+• /etc/ansible/ansible.cfg — The main configuration file for Ansible
+• /etc/ansible/roles — This folder allows you to create folders for each server role, web/app/db, etc.
+
+9. Settings in Ansible are adjustable via a configuration file
+
+10. Changes can be made and used in a configuration file which will be processed in the following order:
+ANSIBLE_CONFIG (an environment variable)
+ansible.cfg (in the current directory)
+.ansible.cfg (in the home directory)
+/etc/ansible/ansible.cfg
+
+11. Ansible recognizes systems listed in Ansible’s inventory file, which defaults to being saved in the location /etc/ansible/hosts
+
+12. Playbooks are Ansible’s configuration, deployment, and orchestration language
+Playbooks describe a policy you want your remote systems to enforce, or a set of steps in a general IT process.Playbooks orchestrate steps of any manual ordered process, even as different steps must bounce back and forth between sets of machines in particular orders. If Ansible modules are the tools in your workshop, playbooks are your instruction manuals, and your inventory of hosts are your raw material.
+/usr/bin/ansible-playbook is used for running configurations from an playbook
+
+	$  ansible-playbook <playbook>.yml
+
+13. Playbooks are expressed in YAML format
