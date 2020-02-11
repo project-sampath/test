@@ -1,6 +1,6 @@
 #! /bin/bash
 
-a=`find /software/MRPTSSpecificFiles/TobeimportedFiles -xdev -type f | sort -n | egrep -i '.zip|.jar' | awk {print} ORS=", " | sed 's/, $//'`
+a=`find /software/MRPTSSpecificFiles/TobeimportedFiles -xdev -type f | sort -n | egrep -i '.zip|.jar' | awk {print} ORS=","`
 
 b=`date +%d-%m-%Y`
 
