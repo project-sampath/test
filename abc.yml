@@ -1,7 +1,8 @@
 ---
   - hosts: jboss
-    become: yes
-    become_user: jboss
+    environment:
+      JAVA_HOME: /usr/lib/jvm/jdk1.8.0_241
+    sudo: yes
     tasks:
     - name: Create "jboss" directory under /usr/jboss
       file:
@@ -47,8 +48,10 @@
         owner: jboss
         group: jboss
         mode:  0755
+    - name: Check Java Version
+      shell: /usr/lib/jvm/jdk1.8.0_241/jre/bin/java -version
     - name: Run the Jboss-console user 
-      shell: sh /usr/jboss/jboss-eap-7.1/bin/add-user.sh admin MRPTS --silent 
+      shell: /usr/jboss/jboss-eap-7.1/bin/add-user.sh admin MRPTS --silent 
     - name: pegatemp creation
       file:
         path: /pega/pegatemp
@@ -92,4 +95,4 @@
         group: jboss
         mode:  0755
     - name: Run the Jboss Service
-      shell: sh /usr/jboss/jboss-eap-7.1/startjboss.sh
+      shell: /usr/jboss/jboss-eap-7.1/startjboss.sh
