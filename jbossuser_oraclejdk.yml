@@ -1,0 +1,33 @@
+---
+  - hosts: jboss
+    sudo: yes
+    tasks:
+    - name: Add group "jboss"
+      group: name=jboss
+    - name: Add user "jboss"
+      user: name=jboss group=jboss home=/home/jboss
+    - name: Create "jboss" directory under /usr/jboss
+      file:
+         path: /usr/jboss
+         state: directory
+         owner: jboss
+         group: jboss
+         mode: 0755
+##- name: Gunzip the Oracle JDK File
+## shell: sh gunzip /usr/ansible_demo/pega_ansible/OracleJDK/jdk-8u231-linux-i586.tar.gz
+    - name: Copy orcle jdk 8 version and untar it
+      unarchive: src=/usr/ansible_demo/pega_ansible/OracleJDK/jdk-8u241-linux-x64.tar dest=/usr/lib/jvm/
+    - name: set JAVA_HOME
+      lineinfile: 
+        dest: ~/.bash_profile
+        line: '{{ item }}'
+      with_items:
+        - 'export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_241/'
+        - 'export PATH=${PATH}:${JAVA_HOME}/bin'
+    - name: set JAVA_HOME for jboss user
+      lineinfile:
+        dest: /home/jboss/.bash_profile
+        line: '{{ item }}'
+      with_items:
+        - 'export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_241/'
+        - 'export PATH=${PATH}:${JAVA_HOME}/bin'

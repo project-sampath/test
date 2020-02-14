@@ -1,0 +1,98 @@
+---
+  - hosts: jboss
+    environment:
+      JAVA_HOME: /usr/lib/jvm/jdk1.8.0_241
+    sudo: yes
+    tasks:
+    - name: Create "jboss" directory under /usr/jboss
+      file:
+         path: /usr/jboss
+         state: directory
+         owner: jboss
+         group: jboss
+#    - name: Copy orcle jdk 8 version and untar it
+#      unarchive: src=/usr/ansible_demo/pega_ansible/OracleJDK/jdk-8u231-linux-i586.tar.gz dest=/usr/jboss/
+    - name: Copy "jboss-eap-7.1.zip" file with owner and permissions in "jboss" folder
+      copy:
+        src: /usr/ansible_demo/pega_ansible/media/jboss-eap-7.1.zip
+        dest: /usr/jboss/
+        owner: jboss
+        group: jboss
+        mode:  0755
+    - name: Extract jboss-eap-7.1.zip into /usr/jboss/ folder
+      unarchive:
+        src: /usr/jboss/jboss-eap-7.1.zip
+        dest: /usr/jboss/
+        remote_src: yes
+        owner: jboss
+        group: jboss
+        mode:  0755
+    - name: Copy standalone file
+      copy:
+        src: /usr/ansible_demo/pega_ansible/pega/jboss-config/standalone-full.xml
+        dest: /usr/jboss/jboss-eap-7.1/standalone/configuration/
+        owner: jboss
+        group: jboss
+        mode:  0755
+    - name: Copy startjboss.sh file with owner and permissions in  /usr/jboss/jboss-eap-7.1/standalone/configuration folder
+      copy:
+        src: /usr/ansible_demo/pega_ansible/startjboss.sh
+        dest: /usr/jboss/jboss-eap-7.1/
+        owner: jboss
+        group: jboss
+        mode:  0755
+    - name: Copy standalone.conf
+      copy:
+        src: /usr/ansible_demo/pega_ansible/pega/jboss-config/standalone.conf
+        dest: /usr/jboss/jboss-eap-7.1/bin/
+        owner: jboss
+        group: jboss
+        mode:  0755
+    - name: Check Java Version
+      shell: /usr/lib/jvm/jdk1.8.0_241/jre/bin/java -version
+    - name: Run the Jboss-console user 
+      shell: /usr/jboss/jboss-eap-7.1/bin/add-user.sh admin MRPTS --silent 
+    - name: pegatemp creation
+      file:
+        path: /pega/pegatemp
+        state: directory
+        owner: jboss
+        group: jboss
+        mode:  0755
+    - name: pegalogs creation
+      file:
+        path: /pega/pegalogs
+        state: directory
+        owner: jboss
+        group: jboss
+        mode:  0755
+    - name: pegaconfig creation
+      file:
+        path: /pega/pegaconfig
+        state: directory
+        owner: jboss
+        group: jboss
+        mode:  0755
+    - name: PegaSearchIndex creation
+      file:
+        path: /pega/PegaSearchIndex
+        state: directory
+        owner: jboss
+        group: jboss
+        mode:  0755
+    - name: Copy Copy pega prconfig.xml, prbootstrap.properties and prlog4j2.xml into pegaconfig
+      copy:
+        src: /usr/ansible_demo/pega_ansible/pega/pega-config/
+        dest: /pega/pegaconfig
+        owner: jboss
+        group: jboss
+        mode:  0755		
+    - name: Copy deployable artifacts
+      copy:
+        src: /usr/ansible_demo/pega_ansible/pega/deployments/
+        dest: /usr/jboss/jboss-eap-7.1/standalone/deployments/
+        owner: jboss
+        group: jboss
+        mode:  0755
+    - name: Run the Jboss Service
+      shell: /usr/jboss/jboss-eap-7.1/startjboss.sh
