@@ -1,0 +1,21 @@
+
+Pros:
+
+Lightweight
+Hightly recommended for easy provisioning
+POC test can be carried out
+Volume claim can help data retention 
+Cost effective for development servers
+
+Cons:
+
+Highly recommended only for development environment and not for production
+Platform dependent
+Backups becomes tedious
+Networking bridge is complex accross servers
+
+URLS:
+
+1. Explanation: https://vsupalov.com/database-in-docker/ 
+2. Running a DB: https://medium.com/@wkrzywiec/database-in-a-docker-container-how-to-start-and-whats-it-about-5e3ceea77e50
+3. MSSQL in linux: https://hub.docker.com/r/microsoft/mssql-server-linux
