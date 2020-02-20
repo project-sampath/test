@@ -1,9 +1,0 @@
-#! /bin/bash
-
-a=`find /software/MRPTSSpecificFiles/TobeimportedFiles -xdev -type f | sort -n | egrep -i '.zip|.jar' | awk {print} ORS=","`
-
-b=`date +%d-%m-%Y`
-
-sed -i "s|import.archive.path=.*|import.archive.path=${a}|" test1
-
-tar -cvzf /root/archive/"project_$b.tar.gz" /root/project
