@@ -1,0 +1,32 @@
+2020-03-11 14:59:49,354 ERROR [org.jboss.as.controller.management-operation] (ServerService Thread Pool -- 67) WFLYCTL0013: Operation ("deploy") failed - address: ([("deployment" => "prpc_j2ee14_jboss7JBM.ear")]) - failure description: {
+    "WFLYCTL0412: Required services that are not installed:" => ["jboss.naming.context.java.url.pega.none"],
+    "WFLYCTL0180: Services with missing/unavailable dependencies" => [
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineCMT.env.url.\"pegarules.bootstrap\" is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineBMT.env.url.\"pegarules.logging.configuration\" is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineCMT.env.url.\"pegarules.keyring\" is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineCMT.env.url.profiling.tracefile is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineCMT.env.wm.PegaWorkManager is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineBMT.env.jdbc.PRFileStore is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineCMT.env.url.initialization.explicittempdir is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineBMT.env.url.\"pegarules.keyring\" is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineBMT.env.url.\"prmbeans.security\" is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.Database.env.jdbc.PRFileStore is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineCMT.env.jdbc.PRFileStore is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineBMT.env.url.\"pegarules.bootstrap\" is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineBMT.env.url.compiler.externaljardir is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.LockManager.env.jdbc.PRFileStore is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineCMT.env.url.\"pegarules.config\" is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineBMT.env.url.\"pegarules.config\" is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineCMT.env.url.compiler.externaljardir is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.module.prpc_j2ee14_jboss7JBM.prweb.env.jdbc.PRFileStore is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineBMT.env.url.garbagecollection.logfile is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineCMT.env.url.compiler.externalclassesdir is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineCMT.env.url.garbagecollection.logfile is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineBMT.env.url.compiler.externalclassesdir is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineCMT.env.url.\"prmbeans.security\" is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineBMT.env.wm.PegaWorkManager is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineCMT.env.url.\"pegarules.logging.configuration\" is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineBMT.env.url.profiling.tracefile is missing [jboss.naming.context.java.url.pega.none]",
+        "jboss.naming.context.java.comp.prpc_j2ee14_jboss7JBM.prbeans.EngineBMT.env.url.initialization.explicittempdir is missing [jboss.naming.context.java.url.pega.none]"
+    ]
+}
